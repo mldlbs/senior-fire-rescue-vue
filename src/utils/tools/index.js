@@ -7,7 +7,7 @@ import { psg } from '@/map'
 export function addScene() {
   const b3d = psg.get('b3d')
   b3d.openScene({
-    url: 'http://www.supermapol.com/realspace/services/3D-OlympicGreen_Plan/rest/realspace',
+    url: 'http://www.supermapol.com/realspace/services/3D-OlympicGreen/rest/realspace',
     success: (viewer) => {
       console.log(viewer)
     }
