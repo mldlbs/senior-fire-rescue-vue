@@ -8833,10 +8833,10 @@ vue-eslint-parser@^7.0.0:
     lodash "^4.17.21"
     semver "^6.3.0"
 
-vue-flow-edit@^1.0.28:
-  version "1.0.28"
-  resolved "https://registry.yarnpkg.com/vue-flow-edit/-/vue-flow-edit-1.0.28.tgz#661edbd3621a44577d66e12922bf746f86d98f65"
-  integrity sha512-+a+63nEXR9ZcInQr5ocw7ZnuRX+srt8Q8tVulKnb4VbWMGW9Dg66zFY/xAX+S+h5lbWy2AcC24aeqnT/6QaS6w==
+vue-flow-edit@^1.0.29:
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/vue-flow-edit/-/vue-flow-edit-1.0.29.tgz#4767afbff235806071f58c7a0b9d3d562b88eb8f"
+  integrity sha512-4DE+yYulWL3Ysj5XGtMQ5+9fsNLMGO0TVUbIVuAxC2Dl9b66sT0Lua8g1qc7z3/r7QzsVASEMHY1ZUJJllzwAg==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"

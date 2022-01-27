@@ -7,9 +7,9 @@ import { psg } from '@/map'
 export function addScene() {
   const b3d = psg.get('b3d')
   b3d.openScene({
-    url: 'http://xablj.xyz:8090/iserver/services/3D-BaiHuoShangChang/rest/realspace',
+    url: 'http://www.supermapol.com/realspace/services/3D-OlympicGreen_Plan/rest/realspace',
     success: (viewer) => {
-        console.log(viewer)
+      console.log(viewer)
     }
   })
 
@@ -21,7 +21,6 @@ export function addScene() {
   // b3d.viewer.scene.backgroundColor = Cesium.Color.TRANSPARENT
   b3d.viewer.scene.sun.show = false
   b3d.viewer.scene.moon.show = false
-
 }
 
 // 添加模型
