@@ -1,0 +1,23 @@
+/**
+ * Cesium - https://github.com/CesiumGS/cesium
+ *
+ * Copyright 2011-2020 Cesium Contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Columbus View (Pat. Pend.)
+ *
+ * Portions licensed separately.
+ * See https://github.com/CesiumGS/cesium/blob/master/LICENSE.md for full licensing details.
+ */
+define(["./when-8d13db60","./Check-70bec281","./Math-61ede240","./Cartographic-f27b0939","./Cartesian2-09435a6c","./BoundingSphere-c409f092","./Cartesian4-5af5bb24","./RuntimeError-ba10bc3e","./WebGLConstants-4c11ee5f","./ComponentDatatype-5862616f","./GeometryAttribute-2243653a","./PrimitiveType-97893bc7","./FeatureDetection-7bd32c34","./Transforms-1509c877","./buildModuleUrl-392763e2","./GeometryAttributes-aacecde6","./arrayFill-9766fb2e","./GeometryOffsetAttribute-999fc023"],function(c,o,e,d,t,b,a,n,r,y,p,C,i,u,s,l,h,A){var k=new d.Cartesian3;function f(e){var t=(e=c.defaultValue(e,c.defaultValue.EMPTY_OBJECT)).minimum,a=e.maximum;if(o.Check.typeOf.object("min",t),o.Check.typeOf.object("max",a),c.defined(e.offsetAttribute)&&e.offsetAttribute===A.GeometryOffsetAttribute.TOP)throw new o.DeveloperError("GeometryOffsetAttribute.TOP is not a supported options.offsetAttribute for this geometry.");this._min=d.Cartesian3.clone(t),this._max=d.Cartesian3.clone(a),this._offsetAttribute=e.offsetAttribute,this._workerName="createBoxOutlineGeometry"}f.fromDimensions=function(e){var t=(e=c.defaultValue(e,c.defaultValue.EMPTY_OBJECT)).dimensions;o.Check.typeOf.object("dimensions",t),o.Check.typeOf.number.greaterThanOrEquals("dimensions.x",t.x,0),o.Check.typeOf.number.greaterThanOrEquals("dimensions.y",t.y,0),o.Check.typeOf.number.greaterThanOrEquals("dimensions.z",t.z,0);var a=d.Cartesian3.multiplyByScalar(t,.5,new d.Cartesian3);return new f({minimum:d.Cartesian3.negate(a,new d.Cartesian3),maximum:a,offsetAttribute:e.offsetAttribute})},f.fromAxisAlignedBoundingBox=function(e){return o.Check.typeOf.object("boundindBox",e),new f({minimum:e.minimum,maximum:e.maximum})},f.packedLength=2*d.Cartesian3.packedLength+1,f.pack=function(e,t,a){return o.Check.typeOf.object("value",e),o.Check.defined("array",t),a=c.defaultValue(a,0),d.Cartesian3.pack(e._min,t,a),d.Cartesian3.pack(e._max,t,a+d.Cartesian3.packedLength),t[a+2*d.Cartesian3.packedLength]=c.defaultValue(e._offsetAttribute,-1),t};var m=new d.Cartesian3,x=new d.Cartesian3,O={minimum:m,maximum:x,offsetAttribute:void 0};return f.unpack=function(e,t,a){o.Check.defined("array",e),t=c.defaultValue(t,0);var n=d.Cartesian3.unpack(e,t,m),r=d.Cartesian3.unpack(e,t+d.Cartesian3.packedLength,x),i=e[t+2*d.Cartesian3.packedLength];return c.defined(a)?(a._min=d.Cartesian3.clone(n,a._min),a._max=d.Cartesian3.clone(r,a._max),a._offsetAttribute=-1===i?void 0:i,a):(O.offsetAttribute=-1===i?void 0:i,new f(O))},f.createGeometry=function(e){var t=e._min,a=e._max;if(!d.Cartesian3.equals(t,a)){var n=new l.GeometryAttributes,r=new Uint16Array(24),i=new Float64Array(24);i[0]=t.x,i[1]=t.y,i[2]=t.z,i[3]=a.x,i[4]=t.y,i[5]=t.z,i[6]=a.x,i[7]=a.y,i[8]=t.z,i[9]=t.x,i[10]=a.y,i[11]=t.z,i[12]=t.x,i[13]=t.y,i[14]=a.z,i[15]=a.x,i[16]=t.y,i[17]=a.z,i[18]=a.x,i[19]=a.y,i[20]=a.z,i[21]=t.x,i[22]=a.y,i[23]=a.z,n.position=new p.GeometryAttribute({componentDatatype:y.ComponentDatatype.DOUBLE,componentsPerAttribute:3,values:i}),r[0]=4,r[1]=5,r[2]=5,r[3]=6,r[4]=6,r[5]=7,r[6]=7,r[7]=4,r[8]=0,r[9]=1,r[10]=1,r[11]=2,r[12]=2,r[13]=3,r[14]=3,r[15]=0,r[16]=0,r[17]=4,r[18]=1,r[19]=5,r[20]=2,r[21]=6,r[22]=3,r[23]=7;var o=d.Cartesian3.subtract(a,t,k),u=.5*d.Cartesian3.magnitude(o);if(c.defined(e._offsetAttribute)){var s=i.length,f=new Uint8Array(s/3),m=e._offsetAttribute===A.GeometryOffsetAttribute.NONE?0:1;h.arrayFill(f,m),n.applyOffset=new p.GeometryAttribute({componentDatatype:y.ComponentDatatype.UNSIGNED_BYTE,componentsPerAttribute:1,values:f})}return new p.Geometry({attributes:n,indices:r,primitiveType:C.PrimitiveType.LINES,boundingSphere:new b.BoundingSphere(d.Cartesian3.ZERO,u),offsetAttribute:e._offsetAttribute})}},function(e,t){return c.defined(t)&&(e=f.unpack(e,t)),f.createGeometry(e)}});

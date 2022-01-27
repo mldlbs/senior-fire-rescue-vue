@@ -1,0 +1,23 @@
+/**
+ * Cesium - https://github.com/CesiumGS/cesium
+ *
+ * Copyright 2011-2020 Cesium Contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Columbus View (Pat. Pend.)
+ *
+ * Portions licensed separately.
+ * See https://github.com/CesiumGS/cesium/blob/master/LICENSE.md for full licensing details.
+ */
+define(["exports"],function(n){function t(n,t){return null!=n?n:t}var e,r,a;function m(n,t,e,r){return h(n).then(t,e,r)}function h(n){var t,e;return n instanceof l?n:u(n)?(t=b(),n.then(function(n){t.resolve(n)},function(n){t.reject(n)},function(n){t.progress(n)}),t.promise):(e=n,new l(function(n){try{return h(n?n(e):e)}catch(n){return p(n)}}))}function l(n){this.then=n}function p(e){return new l(function(n,t){try{return t?h(t(e)):p(e)}catch(n){return p(n)}})}function b(){var n,i,c,r,t,e;return n=new l(u),i=[],c=[],r=function(t,e,r){var u,o;return u=b(),o="function"==typeof r?function(n){try{u.progress(r(n))}catch(n){u.progress(n)}}:function(n){u.progress(n)},i.push(function(n){n.then(t,e).then(u.resolve,u.reject,o)}),c.push(o),u.promise},t=function(n){return v(c,n),n},e=function(n){return n=h(n),r=n.then,e=h,t=k,v(i,n),c=i=a,n},{then:u,resolve:o,reject:f,progress:s,promise:n,resolver:{resolve:o,reject:f,progress:s}};function u(n,t,e){return r(n,t,e)}function o(n){return e(n)}function f(n){return e(p(n))}function s(n){return t(n)}}function u(n){return n&&"function"==typeof n.then}function o(n,p,v,g,y){return f(2,arguments),m(n,function(n){var t,e,r,u,o,i,c,f,s,a;if(s=n.length>>>0,t=Math.max(0,Math.min(p,s)),r=[],e=s-t+1,u=[],o=b(),t)for(f=o.progress,c=function(n){u.push(n),--e||(i=c=k,o.reject(u))},i=function(n){r.push(n),--t||(i=c=k,o.resolve(r))},a=0;a<s;++a)a in n&&m(n[a],l,h,f);else o.resolve(r);return o.then(v,g,y);function h(n){c(n)}function l(n){i(n)}})}function i(n,t,e,r){return f(1,arguments),c(n,s).then(t,e,r)}function c(n,c){return m(n,function(n){var e,t,r,u,o,i;if(r=t=n.length>>>0,e=[],i=b(),r)for(u=function(n,t){m(n,c).then(function(n){e[t]=n,--r||i.resolve(e)},i.reject)},o=0;o<t;o++)o in n?u(n[o],o):--r;else i.resolve(e);return i.promise})}function v(n,t){for(var e,r=0;e=n[r++];)e(t)}function f(n,t){for(var e,r=t.length;n<r;)if(null!=(e=t[--r])&&"function"!=typeof e)throw new Error("arg "+r+" must be a function")}function k(){}function s(n){return n}t.EMPTY_OBJECT=Object.freeze({}),m.defer=b,m.resolve=h,m.reject=function(n){return m(n,p)},m.join=function(){return c(arguments,s)},m.all=i,m.map=c,m.reduce=function(n,o){var t=r.call(arguments,1);return m(n,function(n){var u;return u=n.length,t[0]=function(n,e,r){return m(n,function(t){return m(e,function(n){return o(t,n,r,u)})})},e.apply(n,t)})},m.any=function(n,t,e,r){return o(n,1,function(n){return t?t(n[0]):n[0]},e,r)},m.some=o,m.allSettled=function(n,d,j,w){return f(1,arguments),m(n,function(n){var e,t,r,u,o,i,c,f,s;for(c=n.length>>>0,f=n.length>>>0,e=[],t=[],i=(r=b()).progress,o=function(n){t.push(n),--f||(u=o=k,r.resolve(e))},u=function(n,t){e[t]=n,--f||(u=o=k,r.resolve(e))},s=0;s<c;++s)switch(s){case 0:m(n[s],l,a,i);break;case 1:m(n[s],p,a,i);break;case 2:m(n[s],v,a,i);break;case 3:m(n[s],g,a,i);break;case 4:m(n[s],y,a,i);break;default:m(n[s],h,a,i)}return r.then(d,j,w);function a(n){o(n)}function h(n){u(n,0)}function l(n){u(n,0)}function p(n){u(n,1)}function v(n){u(n,2)}function g(n){u(n,3)}function y(n){u(n,4)}})},m.chain=function(n,t,e){var r=2<arguments.length;return m(n,function(n){return n=r?e:n,t.resolve(n),n},function(n){return t.reject(n),p(n)},t.progress)},m.isPromise=u,l.prototype={always:function(n,t){return this.then(n,n,t)},otherwise:function(n){return this.then(a,n)},yield:function(n){return this.then(function(){return n})},spread:function(t){return this.then(function(n){return i(n,function(n){return t.apply(a,n)})})}},r=[].slice,e=[].reduce||function(n){var t,e,r,u,o;if(o=0,u=(t=Object(this)).length>>>0,(e=arguments).length<=1)for(;;){if(o in t){r=t[o++];break}if(++o>=u)throw new TypeError}else r=e[1];for(;o<u;++o)o in t&&(r=n(r,t[o],o,t));return r},n.defaultValue=t,n.defined=function(n){return null!=n},n.when=m});

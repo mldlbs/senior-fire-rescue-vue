@@ -1,0 +1,78 @@
+[{
+  "flowId": "flow-f2ced416-ca74-ab91-5512-cc7b1af6582d",
+  "content": "火焰效果",
+  "duration": 5,
+  "action": {
+    "id": "xf_01",
+    "features": [{
+      "type": "point",
+      "coordinates": [{
+        "longitude": 108.27227971226787,
+        "latitude": 37.04441793739158,
+        "height": 0
+      }],
+      "props": {
+        "id": "particle-f-0bcbd70a-c2f0-3ced-f2f8-d9d6e0ef7083",
+        "p_type": "particle_7",
+        "vm1": "",
+        "vm2": "",
+        "vm3": ""
+      }
+    }]
+  },
+  "active": false
+}, {
+  "flowId": "flow-0145e2c6-0b2d-9376-b41d-15c167a703ea",
+  "content": "车辆移动",
+  "duration": 5,
+  "action": {
+    "id": "xf_06",
+    "features": [{
+      "type": "line",
+      "coordinates": [
+        [{
+          "longitude": 108.2721619358149,
+          "latitude": 37.044318071084284,
+          "height": 0
+        }, {
+          "longitude": 108.27228836635182,
+          "latitude": 37.044292004649584,
+          "height": 0
+        }, {
+          "longitude": 108.27247165422574,
+          "latitude": 37.044275949909554,
+          "height": 0
+        }, {
+          "longitude": 108.27258443684727,
+          "latitude": 37.04444289895191,
+          "height": 0
+        }, {
+          "longitude": 108.27261795009353,
+          "latitude": 37.044776827935635,
+          "height": 0
+        }, {
+          "longitude": 108.27227760158071,
+          "latitude": 37.045004804620284,
+          "height": 0
+        }, {
+          "longitude": 108.2720326268886,
+          "latitude": 37.04483078586594,
+          "height": 0
+        }, {
+          "longitude": 108.27210222329929,
+          "latitude": 37.04445524269446,
+          "height": 0
+        }, {
+          "longitude": 108.27209144085744,
+          "latitude": 37.04432396842405,
+          "height": 0
+        }]
+      ],
+      "props": {
+        "id": "line-0c525730-2854-b2c9-b951-2597cc374c81",
+        "uri": "static/models/xfc.gltf"
+      }
+    }]
+  },
+  "active": true
+}]

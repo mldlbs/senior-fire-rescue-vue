@@ -1,0 +1,92 @@
+[{
+    "id": "xf_14",
+    "text": "设置楼层",
+    "depTools": []
+  }, {
+    "id": "xf_01",
+    "text": "发现灾情",
+    "depTools": [{
+        "name": "爆炸火"
+      },
+      {
+        "name": "烟熏火"
+      },
+      {
+        "name": "建筑火"
+      }
+    ]
+  },
+  {
+    "id": "xf_02",
+    "text": "灾情播报",
+    "depTools": []
+  },
+  {
+    "id": "xf_03",
+    "text": "标注疏散通道",
+    "depTools": [{
+      "name": "疏散路线"
+    }, {
+      "name": "撤退路线"
+    }]
+  },
+  {
+    "id": "xf_04",
+    "text": "疏散人员",
+    "depTools": []
+  },
+  {
+    "id": "xf_05",
+    "text": "消防接警",
+    "depTools": []
+  },
+  {
+    "id": "xf_06",
+    "text": "行动轨迹",
+    "depTools": [{
+      "name": "进攻路线"
+    }]
+  },
+  {
+    "id": "xf_07",
+    "text": "室外力量部署",
+    "depTools": [{
+      "name": "32米高喷车"
+    }, {
+      "name": "水罐消防车"
+    }]
+  },
+  {
+    "id": "xf_08",
+    "text": "消火栓",
+    "depTools": [{
+      "name": "室内消火栓"
+    }, {
+      "name": "室外消火栓"
+    }]
+  },
+  {
+    "id": "xf_15",
+    "text": "连接水带",
+    "depTools": []
+  },
+  {
+    "id": "xf_09",
+    "text": "喷水",
+    "depTools": [{
+      "name": "水柱"
+    }]
+  },
+  {
+    "id": "xf_10",
+    "text": "进攻通道",
+    "depTools": [{
+      "name": "进攻路线"
+    }]
+  },
+  {
+    "id": "xf_13",
+    "text": "消防员就位",
+    "depTools": []
+  }
+]

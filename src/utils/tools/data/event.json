@@ -1,0 +1,22 @@
+[
+  {
+    "id": "xf_01",
+    "text": "确诊",
+    "depTools": []
+  },
+  {
+    "id": "xf_02",
+    "text": "集中隔离",
+    "depTools": []
+  },
+  {
+    "id": "xf_03",
+    "text": "密接",
+    "depTools": []
+  },
+  {
+    "id": "xf_04",
+    "text": "活动轨迹",
+    "depTools": []
+  }
+]
