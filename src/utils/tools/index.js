@@ -5,7 +5,7 @@ import { psg } from '@/map'
 
 // 添加三维场景
 export function addScene() {
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   b3d.openScene({
     url: 'http://www.supermapol.com/realspace/services/3D-OlympicGreen/rest/realspace',
     success: (viewer) => {
@@ -74,7 +74,7 @@ export function addModel(item, position) {
 }
 
 export function addLine(item) {
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   const positions = []
   const position = JSON.parse(item.plottingPosition)
   position.forEach(item => {
@@ -197,7 +197,7 @@ export function addLine(item) {
 }
 
 export function addArea(item) {
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   const positions = []
   const position = JSON.parse(item.plottingPosition)
   position.forEach(item => {
@@ -296,7 +296,7 @@ function isJsonPosition(pos) {
 // 添加实线
 export function addFullLine() {
   console.log('添加实线')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -322,7 +322,7 @@ export function addFullLine() {
 // 添加虚线
 export function addDashLine() {
   console.log('添加虚线')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -354,7 +354,7 @@ export function addDashLine() {
 // 添加箭头线
 export function addArrowLine() {
   console.log('添加箭头线')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -381,7 +381,7 @@ export function addArrowLine() {
 // 添加轮廓线
 export function addOutLine() {
   console.log('添加轮廓线')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -413,7 +413,7 @@ export function addOutLine() {
 // 添加光晕线
 export function addGlowLine() {
   console.log('添加光晕线')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -443,7 +443,7 @@ export function addGlowLine() {
 // 添加尾迹线
 export function addTrailLine() {
   console.log('添加尾迹线')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -475,7 +475,7 @@ export function addTrailLine() {
 // 添加纯色面
 export function addPurePolygon() {
   console.log('添加纯色面')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -500,7 +500,7 @@ export function addPurePolygon() {
 // 添加网格面
 export function addGridPolygon() {
   console.log('添加网格面')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -535,7 +535,7 @@ export function addGridPolygon() {
 // 添加条纹面
 export function addStripeEvenPolygon() {
   console.log('添加条纹面')
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   getLinePosition((res) => {
     console.log(res)
     const positions = []
@@ -568,7 +568,7 @@ export function addStripeEvenPolygon() {
 }
 
 export function addDynamicCircle(item, position) {
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   const height = Number(position.height)
   position = Cesium.Cartesian3.fromDegrees(Number(position.longitude), Number(position.latitude), Number(position.height))
   b3d.viewer.entities.add({
@@ -592,7 +592,7 @@ export function addDynamicCircle(item, position) {
 
 // 添加模型
 export function addEntityModel(item, position) {
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   const headingPitchRoll = new Cesium.HeadingPitchRoll(
     Cesium.Math.toRadians(0),
     Cesium.Math.toRadians(0),
@@ -617,7 +617,7 @@ export function addEntityModel(item, position) {
 
 // 根据id 获取选中entity
 export function getEntity(id) {
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   let entity
   const entities = b3d.viewer.entities._entities._array
   for (var i = 0; i < entities.length; i++) {
@@ -631,7 +631,7 @@ export function getEntity(id) {
 
 // 拾取模型
 export function getModel() {
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   const viewer = b3d.viewer
   const plan = psg.get('plan3d')
   plan.getPoint(res => {

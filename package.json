@@ -9,6 +9,7 @@
   "dependencies": {
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "@vue/babel-preset-jsx": "^1.2.4",
+    "ccgis": "^1.0.43",
     "core-js": "^3.6.5",
     "store": "^2.0.12",
     "vue": "^2.6.11",

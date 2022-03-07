@@ -1,18 +1,17 @@
 /*eslint no-undef:  */
+import CCGIS from 'ccgis'
+import { CesiumFence, CesiumMaterial, AlertMarker, Move, Plan3D, Particle, Action } from 'ccgis/dist/features'
 let psg, mhander
 export default {
   _init() {
-    const { CesiumFence, CesiumMaterial, AlertMarker, Move } = B3dCesium.Plugins
-    const Plan3D = B3dCesium.Plugins.Plan3D
-    const Particle = B3dCesium.Plugins.Particle
-    const Action = B3dCesium.Plugins.Action
-    psg = new CCG({
+    console.log(CCGIS)
+    psg = new CCGIS({
       cesium: {
         sceneid: 'cesium-container'
       },
       modules: [CesiumFence, CesiumMaterial, AlertMarker, Move, Plan3D, Particle, Action]
     })
-    const b3d = psg.get('b3d')
+    const b3d = psg.get('cc3dcesium')
     mhander = new Cesium.ScreenSpaceEventHandler(b3d.viewer.scene.canvas)
   }
 }

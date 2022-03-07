@@ -16,7 +16,7 @@ export function stop() {
 
 // 清除场景
 export function clear() {
-  const b3d = psg.get('b3d')
+  const b3d = psg.get('cc3dcesium')
   b3d.viewer.entities.removeAll()
   const particle = psg.get('particle')
   particle.destroy()
